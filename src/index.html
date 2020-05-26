@@ -1,26 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>TV App</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="index.js"></script>
-</head>
-<body>
-
+  </head>
+  <body class="theme-dark">
     <search-form></search-form>
 
-<!--    <tv-poster>-->
-<!--      <button>save</button>-->
-<!--    </tv-poster>-->
+    <!--    <tv-poster>-->
+    <!--      <button>save</button>-->
+    <!--    </tv-poster>-->
+
+    <input type="range" min="1" max="6" value="3" />
+
+    <!--    display: grid;  -->
+    <!--    grid-template-columns: repeat(3, 1fr);  -->
+    <!--    grid-gap: 1.5vw;  -->
+    <!--    padding: 1.5vw 0;  -->
+
+    <template id="shows-item">
+      <tv-poster>
+        <button>save</button>
+        <h4>Demo</h4>
+      </tv-poster>
+    </template>
 
     <tv-shows></tv-shows>
 
-<!--    <button class="add" data-action="add">+</button>-->
-<!--    <button class="remove" data-action="remove">-</button>-->
-
-</body>
+    <!--    <button class="add" data-action="add">+</button>-->
+    <!--    <button class="remove" data-action="remove">-</button>-->
+  </body>
 </html>

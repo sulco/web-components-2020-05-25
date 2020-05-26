@@ -1,3 +1,5 @@
+import { Show } from './tv.models'
+
 class Poster extends HTMLElement {
   static get observedAttributes() {
     return ['show']
@@ -7,14 +9,15 @@ class Poster extends HTMLElement {
   //   this.shadowRoot.querySelector('img').src = next.image.original;
   // }
 
-  set show(show) {
-    this.shadowRoot.querySelector('img').src = show.image?.original ?? 'https://source.unsplash.com/210x295/?movies';
-    this.shadowRoot.querySelector('h2').innerText = show.name;
+  set show(show: Show) {
+    this.shadowRoot.querySelector('img').src =
+      show.image?.original ?? 'https://source.unsplash.com/210x295/?movies'
+    this.shadowRoot.querySelector('h2').innerText = show.name
   }
 
   constructor() {
-    super();
-    this.attachShadow({mode: "open"});
+    super()
+    this.attachShadow({ mode: 'open' })
 
     this.shadowRoot.innerHTML = `
     <style>
@@ -28,6 +31,9 @@ class Poster extends HTMLElement {
         button {
             text-transform: uppercase;         
         }
+        ::slotted(button) {
+            color: red;
+        }
     </style>
     <img src="https://source.unsplash.com/210x295/?movies">
     <slot></slot> 
@@ -36,4 +42,4 @@ class Poster extends HTMLElement {
   }
 }
 
-window.customElements.define('tv-poster', Poster);
+window.customElements.define('tv-poster', Poster)

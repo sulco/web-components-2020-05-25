@@ -1,8 +1,10 @@
+// @ts-check
+
 class Hello extends HTMLElement {
   constructor() {
-    super();
+    super()
 
-    this.attachShadow({mode: "open"});
+    this.attachShadow({ mode: 'open' })
 
     this.shadowRoot.innerHTML = `
         <style>
@@ -15,4 +17,4 @@ class Hello extends HTMLElement {
   }
 }
 
-window.customElements.define('tv-hello', Hello);
+window.customElements.define('tv-hello', Hello)
